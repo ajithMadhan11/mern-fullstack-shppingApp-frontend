@@ -17,7 +17,7 @@ const Signin = () => {
                             <label className="text-light">password</label>
                             <input className="form-control" type="password" />
                         </div>
-                        <button className="btn btn-success btn-block">Sign In</button>
+                        <button className="btn mt-4 btn-success btn-block w-100">Sign In</button>
                     </form>
                 </div>
             </div>
