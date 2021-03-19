@@ -36,10 +36,8 @@ const Signup = () => {
                 success:true
                 })
             }
-            
         })
         .catch(error => console.log(error))
-
     }
 
 
