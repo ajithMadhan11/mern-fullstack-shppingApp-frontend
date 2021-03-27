@@ -14,3 +14,9 @@ footer{
   left:0px;
   height: 160px;
 }
+.badge-success{
+  background-color: #2ecc72;
+}
+.badge-danger{
+  background-color: red;
+}

@@ -1,4 +1,4 @@
-import React from "react";
+import React,{Fragment} from "react";
 import { Link, withRouter } from "react-router-dom";
 import { signout, isAuthenticated } from "../auth/helper";
 
@@ -27,16 +27,16 @@ const Menu = ({ history }) => (
           Cart
         </Link>
       </li>
-      <li className="nav-item">
+      {isAuthenticated() && isAuthenticated().user.role===0 && (<li className="nav-item">
         <Link
           style={currentTab(history, "/user/dashboard")}
           className="nav-link"
           to="/user/dashboard"
         >
-          Dashboard
+          U.Dashboard
         </Link>
-      </li>
-      <li className="nav-item">
+      </li>)}
+    {isAuthenticated() && isAuthenticated().user.role===1 &&   (  <li className="nav-item">
         <Link
           style={currentTab(history, "/admin/dashboard")}
           className="nav-link"
@@ -44,25 +44,29 @@ const Menu = ({ history }) => (
         >
           A. Dashboard
         </Link>
-      </li>
-      <li className="nav-item">
-        <Link
-          style={currentTab(history, "/signup")}
-          className="nav-link"
-          to="/signup"
-        >
-          Signup
-        </Link>
-      </li>
-      <li className="nav-item">
-        <Link
-          style={currentTab(history, "/signin")}
-          className="nav-link"
-          to="/signin"
-        >
-          Sign In
-        </Link>
-      </li>
+      </li>)}
+      {!isAuthenticated() && (
+        <Fragment>
+        <li className="nav-item">
+          <Link
+            style={currentTab(history, "/signup")}
+            className="nav-link"
+            to="/signup"
+          >
+            Signup
+          </Link>
+        </li>
+        <li className="nav-item">
+          <Link
+            style={currentTab(history, "/signin")}
+            className="nav-link"
+            to="/signin"
+          >
+            Sign In
+          </Link>
+        </li>
+        </Fragment>
+      )}
       {isAuthenticated() && (
     <li className="nav-item">
       <span
