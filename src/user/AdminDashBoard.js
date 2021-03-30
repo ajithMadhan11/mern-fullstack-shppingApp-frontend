@@ -12,11 +12,14 @@ const AdminDashBoard = () => {
 
     const adminLeftSide=()=>{
        return (
-        <div className="card">
-        <h4 className="card-header bg-dark text-white">Admin Navigation</h4>
+        <div className="card ">
+        {/* <h6 className="card-header bg-dark text-white">Admin Navigation</h6> */}
         <ul className="list-group">
             <li className="list-group-item">
                 <Link to="/admin/create/category" className="nav-link text-success">Create Categories</Link>
+            </li>
+            <li className="list-group-item">
+                <Link to="/admin/categories" className="nav-link text-success">Manage Categories</Link>
             </li>
             <li className="list-group-item">
                 <Link to="/admin/create/product" className="nav-link text-success">Create Product</Link>
@@ -25,7 +28,7 @@ const AdminDashBoard = () => {
                 <Link to="/admin/products" className="nav-link text-success">Manage Product</Link>
             </li>
             <li className="list-group-item">
-                <Link to="/admin/orders" className="nav-link text-success">Manage Category</Link>
+                <Link to="/admin/orders" className="nav-link text-success">Manage Orders</Link>
             </li>
         </ul>
         </div>
